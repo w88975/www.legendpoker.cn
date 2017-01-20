@@ -31,8 +31,8 @@
         console.log('android download');
     }
     function handleAppleDownload(e) {
-        e.preventDefault();
-        alert('敬请期待');
+        // e.preventDefault();
+        console.log('apple download');
     }
     // 判断滚动高度，传入要动画的元素ID
     function decideScrollHeight() {
