@@ -14,11 +14,21 @@
         ],
         _wrap = null,
         btn_apple = null,
-        btn_android = null;
+        btn_android = null,
+        ua = null,
+        isWeixin = false;
     
     window.addEventListener('load', attachEvents, false);
     // 绑定事件
     function attachEvents() {
+        ua = navigator.userAgent.toLowerCase();
+        isWeixin = ua.indexOf('micromessenger') != -1;
+        if (isWeixin) {
+            ELEMENTS_TO_POP.forEach(function (elem) {
+                popAnimate(elem);
+            });
+            return;
+        }
         _wrap = document.getElementById('wrap');
         btn_android = document.getElementById('android_download');
         btn_apple = document.getElementById('apple_download');
