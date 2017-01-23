@@ -13,6 +13,7 @@
             position: absolute;
             width: 100%;
             height: 100%;
+            font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,\\5FAE\8F6F\96C5\9ED1,Arial,sans-serif;
         }
         .bg {
             position: absolute;
@@ -53,7 +54,7 @@
             background: #000;
             opacity: .5;
         }
-        #android,#ios {
+        #ios {
             display: none;
         }
     </style>
@@ -73,8 +74,9 @@
 	if (/iphone|ipad|ipod/.test(ua)) {
 		    window.location.href = 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476';
             document.getElementById('ios').style.display = 'block';
+            document.getElementById('android').style.display = 'none';
 	} else if (/android/.test(ua)) {
 		    window.location.href = '/app/legendpoker.apk';
-            document.getElementById('android').style.display = 'block';
+            
 	}
 </script>
