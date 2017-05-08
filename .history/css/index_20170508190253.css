@@ -114,24 +114,13 @@ body {
 }
 
 .body-part .concat {
-    color: #333;
-    font-size: 22px;
-    line-height: 38px;
-    display: inline-block;
-    width: 600px;
-    position: absolute;
-    top: 270px;
-    right: 80px;
-}
 
-.body-part .concat p {
-    position: static;
 }
 
 .body-part .apple-download {
     position: absolute;
     left: 430px;
-    top: 480px;
+    top: 428px;
 }
 .body-part .qr-apple {
     position: absolute;
@@ -154,7 +143,7 @@ body {
 .body-part .android-download {
     position: absolute;
     left: 700px;
-    top: 480px;
+    top: 428px;
 }
 .body-part .qr-android {
     position: absolute;

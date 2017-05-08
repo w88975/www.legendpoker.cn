@@ -131,7 +131,7 @@ body {
 .body-part .apple-download {
     position: absolute;
     left: 430px;
-    top: 480px;
+    top: 428px;
 }
 .body-part .qr-apple {
     position: absolute;
@@ -154,7 +154,7 @@ body {
 .body-part .android-download {
     position: absolute;
     left: 700px;
-    top: 480px;
+    top: 428px;
 }
 .body-part .qr-android {
     position: absolute;
