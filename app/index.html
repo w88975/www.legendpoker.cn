@@ -139,6 +139,8 @@
             }, 1000);
             if (ios) {
                 window.location.href = scheme;
+            } else {
+                window.location.href = cfg.android_download
             }
             document.getElementById("ifr").src = scheme;
         }
