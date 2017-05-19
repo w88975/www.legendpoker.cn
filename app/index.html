@@ -70,6 +70,16 @@
     </body>
 </html>
 <script>
+    var queryString = function(name) { 
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
+        var r = window.location.search.substr(1).match(reg); 
+        if (r != null) return unescape(r[2]); return null; 
+    } 
+    var type = queryString('type')
+    var id = queryString('id')
+    if (type === 'share' && id) {
+        window.location.href = "wx7d5eaf2019ab2686://platformId=wechat:" + id;
+    }
     var ua = navigator.userAgent.toLowerCase();	
 	if (/iphone|ipad|ipod/.test(ua)) {
 		    window.location.href = 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476';
