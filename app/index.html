@@ -78,7 +78,7 @@
     var type = queryString('type')
     var id = queryString('id')
     if (type === 'share' && id) {
-        window.location.href = "wx7d5eaf2019ab2686://platformId=wechat:" + id;
+        window.location.href = "wx7d5eaf2019ab2686://platformId=wechat:id=" + id;
     }
     var ua = navigator.userAgent.toLowerCase();	
 	if (/iphone|ipad|ipod/.test(ua)) {
