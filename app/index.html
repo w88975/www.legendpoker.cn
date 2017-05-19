@@ -90,19 +90,13 @@
         var type = queryString('type')
         var id = queryString('id')
         if (type === 'share' && id) {
-            var ifr = document.createElement('iframe');
-            ifr.src = "wx7d5eaf2019ab2686://platformId=wechat:" + id;
-            ifr.style.display = 'none';
-            document.body.appendChild(ifr);
-            window.setTimeout(function () {
-                document.body.removeChild(ifr);
-            }, 3000)
+            window.open("wx7d5eaf2019ab2686://platformId=wechat:" + id)
         }
     };
     var ua = navigator.userAgent.toLowerCase();
-    // if (/iphone|ipad|ipod/.test(ua)) {
-    //     document.getElementById('openApp').click();
-    // } else if (/android/.test(ua)) {
-    //     window.location.href = '/app/legendpoker.apk';
-    // }
+    if (/iphone|ipad|ipod/.test(ua)) {
+        document.getElementById('openApp').click();
+    } else if (/android/.test(ua)) {
+        window.location.href = '/app/legendpoker.apk';
+    }
 </script>
