@@ -101,11 +101,8 @@
     };
     var ua = navigator.userAgent.toLowerCase();
     if (/iphone|ipad|ipod/.test(ua)) {
-        window.location.href = 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476';
-        document.getElementById('ios').style.display = 'block';
-        document.getElementById('android').style.display = 'none';
+        document.getElementById('openApp').click();
     } else if (/android/.test(ua)) {
         window.location.href = '/app/legendpoker.apk';
     }
-    document.getElementById('openApp').click();
 </script>
