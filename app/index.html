@@ -89,11 +89,14 @@
         window.location.href = "wx7d5eaf2019ab2686://platformId=wechat:" + id;
     }
     var ua = navigator.userAgent.toLowerCase();
-    if (/iphone|ipad|ipod/.test(ua)) {
-        window.location.href = 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476';
-        document.getElementById('ios').style.display = 'block';
-        document.getElementById('android').style.display = 'none';
-    } else if (/android/.test(ua)) {
-        window.location.href = '/app/legendpoker.apk';
-    }
+    setTimeout(function () {
+        if (/iphone|ipad|ipod/.test(ua)) {
+            window.location.href = 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476';
+            document.getElementById('ios').style.display = 'block';
+            document.getElementById('android').style.display = 'none';
+        } else if (/android/.test(ua)) {
+            window.location.href = '/app/legendpoker.apk';
+        }
+    }, 500);
+
 </script>
