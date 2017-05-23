@@ -67,14 +67,15 @@
 </style>
 
 <body>
-    <div class="bg"></div>
+    <!--<div class="bg"></div>
     <div class="mask"></div>
     <div class="arrow"></div>
     <div class="text">
         <p>点击右上角</p>
         <p id="ios">在Safari中打开</p>
         <p id="android">请在浏览器中打开</p>
-    </div>
+    </div>-->
+    <a href="wx7d5eaf2019ab2686://platformId:9999/wechat?id=" id="ad_schema">启动应用程序</a>
     <div id="downdiv" style="display:none;">
         <a href="/app/legendpoker.apk" id="download_a"></a>
     </div>
@@ -89,6 +90,7 @@
         if (r != null) return unescape(r[2]); return null;
     }
     var id = queryString('id')
+    document.getElementById("ad_schema").href = 'wx7d5eaf2019ab2686://platformId:9999/wechat?id='+id;
     window.location.href = 'wx7d5eaf2019ab2686://platformId:9999/wechat?id='+id;
     // var cfg = {
     //     scheme_ios: 'wx7d5eaf2019ab2686://platformId=wechat:'+id,
