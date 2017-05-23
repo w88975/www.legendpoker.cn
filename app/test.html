@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<meta name='apple-itunes-app' content='app-id=id1190038476'>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="renderer" content="webkit" />
+<title>传奇扑克</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, Arial, sans-serif;
+    }
+
+    .bg {
+        position: absolute;
+        bottom: 0;
+        background: url(/imgs/downloading-bg.jpg) no-repeat;
+        width: 100%;
+        background-size: 100%;
+        height: 100%;
+        -webkit-filter: blur(1px);
+        /* Chrome, Opera */
+        -moz-filter: blur(1px);
+        -ms-filter: blur(1px);
+        filter: blur(1px);
+    }
+
+    .text {
+        width: 50%;
+        position: absolute;
+        right: 0;
+        top: 7rem;
+    }
+
+    p {
+        color: #fff;
+        text-align: center;
+    }
+
+    .arrow {
+        background: url(/imgs/arrow.png) no-repeat;
+        width: 5rem;
+        height: 5rem;
+        background-size: 100%;
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+    }
+
+    .mask {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: .5;
+    }
+
+    #ios {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="bg"></div>
+    <div class="mask"></div>
+    <div class="arrow"></div>
+    <div class="text">
+        <p>点击右上角</p>
+        <p id="ios">在Safari中打开</p>
+        <p id="android">请在浏览器中打开</p>
+    </div>
+    <div id="downdiv" style="display:none;">
+        <a href="/app/legendpoker.apk" id="download_a"></a>
+    </div>
+    <iframe src="" id="ifr" style="display:none;"></iframe>
+</body>
+
+</html>
+<script type="text/javascript">
+    var queryString = function (name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    var id = queryString('id')
+    var cfg = {
+        scheme_ios: 'wx7d5eaf2019ab2686://platformId=wechat:'+id,
+        scheme_android: 'wx7d5eaf2019ab2686://platformId=wechat:'+id,
+        ios_download: 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476',
+        android_download: '/app/legendpoker.apk',
+        timeout: 1000
+    };
+    var agent = navigator.userAgent.toLowerCase();
+    var ios = false;
+    var tx = false;
+    var hasApp = true;
+    var downloadUrl = cfg.android_download;
+    var scheme = cfg.scheme_android;
+
+    if (/micromessenger/.test(agent) || /qq\//.test(agent)) {
+        tx = true;
+        hasApp = false;
+    }
+
+    if (/iphone|ipad|ipod/.test(agent)) {
+        ios = true;
+        downloadUrl = cfg.ios_download;
+        scheme = cfg.scheme_ios;
+        document.getElementById("download_a").href = downloadUrl;
+    }
+
+    openApp();
+
+
+
+    function openApp() {
+        if (hasApp) {
+            var loadTime = +(new Date());
+            window.setTimeout(function () {
+                var timeOut = +(new Date());
+                if (timeOut - loadTime < 1500)//打开失败
+                {
+                    if (ios) {
+                        window.location.href = downloadUrl;
+                    } else {
+                        document.getElementById("downdiv").style.display = "block";
+                    }
+
+                    hasApp = false;
+                } else {
+                    window.close();
+                }
+            }, 1000);
+            // if (ios) {
+            //     window.location.href = scheme;
+            // } else {
+            //     window.location.href = cfg.android_download
+            // }
+            document.getElementById("ifr").src = scheme;
+        }
+    }
+
+</script>
