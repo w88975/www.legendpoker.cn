@@ -91,7 +91,7 @@
     var id = queryString('id')
     var cfg = {
         scheme_ios: 'wx7d5eaf2019ab2686://platformId=wechat:'+id,
-        scheme_android: 'wx7d5eaf2019ab2686://platformId=wechat:'+id,
+        scheme_android: 'wx7d5eaf2019ab2686://platformId:9999/wechat?id='+id,
         ios_download: 'https://itunes.apple.com/us/app/chuan-qi-pu-ke/id1190038476',
         android_download: '/app/legendpoker.apk',
         timeout: 1000
@@ -117,8 +117,6 @@
 
     openApp();
 
-
-
     function openApp() {
         if (hasApp) {
             var loadTime = +(new Date());
@@ -137,6 +135,7 @@
                     window.close();
                 }
             }, 1000);
+            
             if (ios) {
                 window.location.href = scheme;
             } else {
